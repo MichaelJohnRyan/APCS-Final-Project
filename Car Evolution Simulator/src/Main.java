@@ -6,8 +6,10 @@ public class Main extends JFrame {
 	public Main() {
 		super("Main");
 		setVisible(true);
+		//setSize(1000, 1500);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
-		setSize(2400, 1080);
+		setUndecorated(true);
+		setExtendedState(JFrame.MAXIMIZED_BOTH);
 	}
 	
 	public static void main(String[] args) {
