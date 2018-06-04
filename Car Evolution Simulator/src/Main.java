@@ -1,15 +1,35 @@
 import org.dyn4j.*;
+import org.dyn4j.dynamics.Body;
+import org.dyn4j.dynamics.World;
+
 import java.awt.*;
 import javax.swing.*;
 
 public class Main extends JFrame {
+	//
+	World world;
+	//
 	public Main() {
-		super("Main");
+		super("Test");
 		setVisible(true);
-		//setSize(1000, 1500);
+		setSize(1000, 1500);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
-		setUndecorated(true);
-		setExtendedState(JFrame.MAXIMIZED_BOTH);
+		setResizable(false);
+		//
+		//
+		Dimension size = new Dimension(800, 600);
+		//
+		//
+		Canvas canvas = new Canvas();
+		canvas.setPreferredSize(size);
+		canvas.setMinimumSize(size);
+		canvas.setMinimumSize(size);
+		canvas.setMaximumSize(size);
+		//
+		add(canvas);
+		pack();
+		
+		
 	}
 	
 	public static void main(String[] args) {
