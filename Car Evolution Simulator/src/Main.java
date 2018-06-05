@@ -13,12 +13,10 @@ import java.awt.*;
 import javax.swing.*;
 
 public class Main extends SimulationFrame {
-	//
-	World world;
-	//
+	
 	public Main() {
-		super("Test", 5);
-		
+		super("Test", 5.0);
+		initializeWorld();
 	}
 	
 	public static void main(String[] args) {
@@ -28,19 +26,20 @@ public class Main extends SimulationFrame {
 
 	@Override
 	protected void initializeWorld() {
-		world.setGravity(World.EARTH_GRAVITY);
+		this.world.setGravity(World.EARTH_GRAVITY);
 		
-		 SimulationBody body1 = new SimulationBody(Color.CYAN);
-		    {
-				Convex c = Geometry.createSquare(1.0);
-				BodyFixture bf = new BodyFixture(c);
-				body1.addFixture(bf);
-		    }
-		    body1.setLinearVelocity(new Vector2(0.0, 0.0));
-		    body1.setAngularVelocity(0.0);
-		    body1.setMass(MassType.NORMAL);
-		    body1.setAutoSleepingEnabled(false);
-		    world.addBody(body1);
+		SimulationBody body1 = new SimulationBody(Color.CYAN);
+		 
+		Convex c = Geometry.createSquare(10.0);
+		BodyFixture bf = new BodyFixture(c);
+		bf.setSensor(false);
+		body1.addFixture(bf);
+		
+		body1.setLinearVelocity(new Vector2(0.0, 0.0));
+		body1.setAngularVelocity(0.0);
+		body1.setMass(MassType.NORMAL);
+		body1.setAutoSleepingEnabled(false);
+		world.addBody(body1);
 		
 	}
 }
