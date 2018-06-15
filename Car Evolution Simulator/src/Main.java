@@ -44,4 +44,4 @@ public class Main extends SimulationFrame {
 		this.world.setGravity(World.EARTH_GRAVITY);
 	}
 }
-//https://www.youtube.com/watch?v=ptK9-CNms98
+//www.youtube.com/watch?v=ptK9-CNms98

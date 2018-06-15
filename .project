@@ -14,13 +14,6 @@
 	<natures>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
-	<linkedResources>
-		<link>
-			<name>Graphics2DRenderer.java</name>
-			<type>1</type>
-			<locationURI>copy_PARENT/Desktop/Graphics2DRenderer.java</locationURI>
-		</link>
-	</linkedResources>
 	<variableList>
 		<variable>
 			<name>copy_PARENT</name>
