@@ -26,33 +26,22 @@ public class Main extends SimulationFrame {
 
 	@Override
 	protected void initializeWorld() {
-		this.world.setGravity(World.EARTH_GRAVITY);
 		
-		SimulationBody body1 = new SimulationBody(Color.CYAN);
-		 
-		Convex c = Geometry.createSquare(10.0);
-		BodyFixture bf = new BodyFixture(c);
-		bf.setSensor(true);
-		body1.addFixture(bf);
-		
-		body1.setLinearVelocity(new Vector2(0.0, 0.0));
-		body1.setAngularVelocity(0.0);
+		SimulationBody body1 = new SimulationBody();
+		body1.addFixture(Geometry.createSquare(10), 1, 20, .25);
+		body1.setAngularVelocity(5);
+		body1.translate(0, 0);
 		body1.setMass(MassType.NORMAL);
-		body1.setAutoSleepingEnabled(false);
-		world.addBody(body1);
+		this.world.addBody(body1);
 		//
 		//
-		SimulationBody body2 = new SimulationBody(Color.BLACK);
+		SimulationBody floor = new SimulationBody();
+		floor.addFixture(Geometry.createRectangle(100.0, 0.5));
+		floor.setMass(MassType.INFINITE);
+		floor.translate(0, -50);
+		this.world.addBody(floor);
 		
-		Convex body2c = Geometry.createSquare(100.0);
-		body2.addFixture(bf);
-		
-		body2.setAngularVelocity(0.0);
-		body2.setLinearVelocity(0, 0);
-		body2.setMass(MassType.INFINITE);
-		body2.setAutoSleepingEnabled(false);
-		body2.translate(0, -50);
-		world.addBody(body2);
+		this.world.setGravity(World.EARTH_GRAVITY);
 	}
 }
 //https://www.youtube.com/watch?v=ptK9-CNms98
