@@ -12,12 +12,26 @@ import org.dyn4j.samples.framework.SimulationBody;
 import org.dyn4j.samples.framework.SimulationFrame;
 
 import java.awt.*;
+import java.util.ArrayList;
+
 import javax.swing.*;
 
 public class Main extends SimulationFrame {
 	
+	ArrayList<Car> generation = new ArrayList<Car>();
+	
 	public Main() {
 		super("Test", 5.0);
+		//fills the generation ArrayList with car objects
+		for(int i = 0; i < 100; i++){
+			generation.add(createCar());
+		}
+		/*
+		for(int i = 0; i < 100; i++){
+			createBody(generation.get(i));
+		}
+		*/
+		createBody(generation.get(0));
 	}
 	
 	public static void main(String[] args) {
@@ -25,7 +39,7 @@ public class Main extends SimulationFrame {
 		simulation.run();
 	}
 	
-	public Car createCar(){
+	public static Car createCar(){
 		//car variable randomizers
 		double bodyWidth = (Math.random()*10)+10;
 		double bodyHeight = (Math.random()*5)+5;
@@ -93,8 +107,7 @@ public class Main extends SimulationFrame {
 		floor.setMass(MassType.INFINITE);
 		floor.translate(0, -50);
 		this.world.addBody(floor);
-
-		createBody(createCar());
+		
 		//sets the worlds gravity to something that I think is closer to earth's gravity
 		this.world.setGravity(new Vector2(0, -30));
 	}

@@ -67,5 +67,4 @@ public class Car {
 	public double getMotor2Speed(){
 		return motor2Speed;
 	}
-	//setters
 }
