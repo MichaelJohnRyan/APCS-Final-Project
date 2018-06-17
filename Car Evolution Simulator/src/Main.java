@@ -35,8 +35,10 @@ public class Main extends SimulationFrame {
 		double motor2Torque = (Math.random()*500)+500;
 		double motor1Speed = (Math.random()*40)+10;
 		double motor2Speed = (Math.random()*40)+10;
+		double wheel1Grip = (Math.random()*20)+10;
+		double wheel2Grip = (Math.random()*20)+10;
 		//creates the car object...
-		Car car = new Car(bodyWidth, bodyHeight, wheel1Radius, wheel2Radius, motor1Torque, motor2Torque, motor1Speed, motor2Speed);
+		Car car = new Car(bodyWidth, bodyHeight, wheel1Radius, wheel2Radius, wheel1Grip, wheel2Grip, motor1Torque, motor2Torque, motor1Speed, motor2Speed);
 		//...then returns it
 		return car;
 		
@@ -44,12 +46,12 @@ public class Main extends SimulationFrame {
 	public void createBody(Car car){
 		//makes each of the components of the car based on the car object and adds them to the simulation
 		SimulationBody wheel1 = new SimulationBody();
-		wheel1.addFixture(Geometry.createCircle(car.getWheel1Radius()), 1, 20, .125);
+		wheel1.addFixture(Geometry.createCircle(car.getWheel1Radius()), 1, car.getWheel1Grip(), .125);
 		wheel1.setMass(MassType.NORMAL);
 		this.world.addBody(wheel1);
 		
 		SimulationBody wheel2 = new SimulationBody();
-		wheel2.addFixture(Geometry.createCircle(car.getWheel2Radius()), 1, 20, .125);
+		wheel2.addFixture(Geometry.createCircle(car.getWheel2Radius()), 1, car.getWheel2Grip(), .125);
 		wheel2.setMass(MassType.NORMAL);
 		wheel2.translate(new Vector2(car.getBodyWidth(), 0));
 		this.world.addBody(wheel2);
@@ -61,15 +63,15 @@ public class Main extends SimulationFrame {
 		
 		WheelJoint joint = new WheelJoint(body, wheel1, new Vector2(0,0), new Vector2(car.getWheel1Radius(),car.getWheel1Radius()));
 		joint.setMotorEnabled(true);
-		joint.setMotorSpeed(100);
-		joint.setMaximumMotorTorque(10);
+		joint.setMotorSpeed(car.getMotor1Speed());
+		joint.setMaximumMotorTorque(car.getMotor1Torque());
 		joint.setCollisionAllowed(false);
 		this.world.addJoint(joint);
 		
 		WheelJoint joint2 = new WheelJoint(body, wheel2, new Vector2(car.getBodyWidth(), 0), new Vector2(car.getWheel2Radius(), car.getWheel2Radius()));
 		joint2.setMotorEnabled(true);
-		joint2.setMotorSpeed(10);
-		joint2.setMaximumMotorTorque(500);
+		joint2.setMotorSpeed(car.getMotor2Speed());
+		joint2.setMaximumMotorTorque(car.getMotor2Torque());
 		joint2.setCollisionAllowed(false);
 		this.world.addJoint(joint2);
 	}

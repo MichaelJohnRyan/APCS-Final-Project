@@ -21,12 +21,16 @@ public class Car {
 	private double motor2Torque;
 	private double motor1Speed;
 	private double motor2Speed;
+	private double wheel1Grip;
+	private double wheel2Grip;
 	
-	public Car(double bodyWidth, double bodyHeight, double wheel1Radius, double wheel2Radius, double motor1Torque, double motor2Torque, double motor1Speed, double motor2Speed){
+	public Car(double bodyWidth, double bodyHeight, double wheel1Radius, double wheel2Radius, double wheel1Grip, double wheel2Grip, double motor1Torque, double motor2Torque, double motor1Speed, double motor2Speed){
 		this.bodyWidth = bodyWidth;
 		this.bodyHeight = bodyHeight;
 		this.wheel1Radius = wheel1Radius;
 		this.wheel2Radius = wheel2Radius;
+		this.wheel1Grip = wheel1Grip;
+		this.wheel2Grip = wheel2Grip;
 		this.motor1Torque = motor1Torque;
 		this.motor2Torque = motor2Torque;
 		this.motor1Speed = motor1Speed;
@@ -44,6 +48,12 @@ public class Car {
 	}
 	public double getWheel2Radius(){
 		return wheel2Radius;
+	}
+	public double getWheel1Grip(){
+		return wheel1Grip;
+	}
+	public double getWheel2Grip(){
+		return wheel2Grip;
 	}
 	public double getMotor1Torque(){
 		return motor1Torque;
