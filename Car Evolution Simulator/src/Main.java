@@ -43,12 +43,12 @@ public class Main extends SimulationFrame {
 		//car variable randomizers
 		double bodyWidth = (Math.random()*10)+10;
 		double bodyHeight = (Math.random()*5)+5;
-		double wheel1Radius = (Math.random()*4)+1;
-		double wheel2Radius = (Math.random()*4)+1;
-		double motor1Torque = (Math.random()*500)+500;
-		double motor2Torque = (Math.random()*500)+500;
-		double motor1Speed = (Math.random()*40)+10;
-		double motor2Speed = (Math.random()*40)+10;
+		double wheel1Radius = (Math.random()*5)+2;
+		double wheel2Radius = (Math.random()*5)+2;
+		double motor1Torque = (Math.random()*1000)+500;
+		double motor2Torque = (Math.random()*1000)+500;
+		double motor1Speed = (Math.random()*50)+50;
+		double motor2Speed = (Math.random()*50)+50;
 		double wheel1Grip = (Math.random()*20)+10;
 		double wheel2Grip = (Math.random()*20)+10;
 		//creates the car object...
