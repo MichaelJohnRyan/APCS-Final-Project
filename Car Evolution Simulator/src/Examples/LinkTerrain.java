@@ -111,19 +111,19 @@ public class LinkTerrain extends SimulationFrame {
 		List<Link> links = Geometry.createLinks(
 				new Vector2[] {
 					// clockwise winding
-					new Vector2(-6.0,  0.5),
+					/*new Vector2(-6.0,  0.5),
 					new Vector2( 0.0,  0.0),
 					new Vector2( 2.0,  0.0),
 					new Vector2( 4.0,  0.2),
 					new Vector2( 4.5,  0.3),
-					new Vector2( 6.0, -0.5)
+					new Vector2( 6.0, -0.5) */
 					// upside down
-//					new Vector2(-6.0, -0.5),
-//					new Vector2( 0.0, -0.0),
-//					new Vector2( 2.0, -0.0),
-//					new Vector2( 4.0, -0.2),
-//					new Vector2( 4.5, -0.3),
-//					new Vector2( 6.0,  0.5)
+					new Vector2(-6.0, -0.5),
+					new Vector2( 0.0, -0.0),
+					new Vector2( 2.0, -0.0),
+					new Vector2( 4.0, -0.2),
+					new Vector2( 4.5, -0.3),
+					new Vector2( 6.0,  0.5)
 					// counter-clockwise winding
 //					new Vector2( 6.0, -0.5),
 //					new Vector2( 4.5,  0.3),

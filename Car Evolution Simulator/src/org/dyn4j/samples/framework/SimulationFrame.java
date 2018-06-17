@@ -57,7 +57,7 @@ public abstract class SimulationFrame extends JFrame {
 	protected final Canvas canvas;
 	
 	/** The dynamics engine */
-	protected final World world;
+	public final World world;
 	
 	/** The pixels per meter scale factor */
 	protected final double scale;
