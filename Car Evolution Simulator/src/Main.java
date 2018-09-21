@@ -29,8 +29,8 @@ public class Main extends SimulationFrame {
 		/*
 		for(int i = 0; i < 100; i++){
 			createBody(generation.get(i));
-		}
-		*/
+		}*/
+		
 		createBody(generation.get(0));
 	}
 	
@@ -47,8 +47,8 @@ public class Main extends SimulationFrame {
 		double wheel2Radius = (Math.random()*5)+2;
 		double motor1Torque = (Math.random()*1000)+500;
 		double motor2Torque = (Math.random()*1000)+500;
-		double motor1Speed = (Math.random()*50)+50;
-		double motor2Speed = (Math.random()*50)+50;
+		double motor1Speed = (Math.random()*50)+75;
+		double motor2Speed = (Math.random()*50)+75;
 		double wheel1Grip = (Math.random()*20)+10;
 		double wheel2Grip = (Math.random()*20)+10;
 		//creates the car object...
@@ -112,4 +112,8 @@ public class Main extends SimulationFrame {
 		this.world.setGravity(new Vector2(0, -30));
 	}
 }
-//www.youtube.com/watch?v=ptK9-CNms98
+/*
+RESOURCES: 
+www.dyn4j.org/
+www.youtube.com/watch?v=ptK9-CNms98
+*/
